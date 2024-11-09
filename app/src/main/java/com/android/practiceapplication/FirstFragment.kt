@@ -28,10 +28,13 @@ class FirstFragment : Fragment() {
 
     private lateinit var serviceIntent:Intent
     private var isBound = false
+    private lateinit var mService: ServiceLearning
 
     private val connection = object : ServiceConnection {
-        override fun onServiceConnected(p0: ComponentName?, p1: IBinder?) {
+        override fun onServiceConnected(p0: ComponentName?, service: IBinder?) {
             Log.d(TAG, "onServiceConnected: ")
+            val binder = service as ServiceLearning.LocalBinder
+            mService = binder.getService()
             isBound = true
         }
 
@@ -70,6 +73,13 @@ class FirstFragment : Fragment() {
             requireContext().bindService(serviceIntent, connection, BIND_AUTO_CREATE)
 //            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
+
+        binding.buttonAccessObject.setOnClickListener {
+            if(isBound){
+                Log.d(TAG, "onViewCreated: ${mService.getRandomNumber()}")
+            }
+        }
+
 
         binding.buttonUnbindService.setOnClickListener {
             requireContext().unbindService(connection)

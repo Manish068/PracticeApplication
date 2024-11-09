@@ -33,6 +33,16 @@
             />
 
         <Button
+            android:id="@+id/button_access_object"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/call_binder"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_bind_service" />
+
+        <Button
             android:id="@+id/button_unbind_service"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,7 +50,7 @@
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_bind_service" />
+            app:layout_constraintTop_toBottomOf="@+id/button_access_object" />
 
         <Button
             android:id="@+id/button_stop_service"
@@ -52,5 +62,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button_unbind_service" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

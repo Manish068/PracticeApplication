@@ -8,6 +8,7 @@
     <string name="bind_service">Bind Service</string>
     <string name="unbind_service">Unbind Service</string>
     <string name="stop_service">Stop Service</string>
+    <string name="call_binder">Call Binder Method</string>
     <string name="previous">Previous</string>
 
     <string name="lorem_ipsum">

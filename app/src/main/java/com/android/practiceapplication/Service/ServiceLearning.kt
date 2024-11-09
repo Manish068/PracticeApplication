@@ -7,6 +7,7 @@ import android.os.Binder
 import android.os.IBinder
 import android.util.Log
 import kotlin.math.log
+import kotlin.random.Random
 
 class ServiceLearning : Service() {
     private  val TAG = "Service Class"
@@ -53,6 +54,10 @@ class ServiceLearning : Service() {
         fun getService() : ServiceLearning{
             return this@ServiceLearning
         }
+    }
+
+    fun getRandomNumber(from: Int=300, to: Int=600): Int {
+        return Random.nextInt(from, to + 1)
     }
 
 }
